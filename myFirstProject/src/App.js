@@ -32,6 +32,8 @@ const App=()  => {
     
     
   }
+  const cityArray = ['Brussel', 'Ghent', 'Antwerp', 'Brugge'];
+  const cities = () => cityArray.map((city) => <Text>{city}</Text>);
    return (
      <>
        <View style={styles.container}>
@@ -50,6 +52,7 @@ const App=()  => {
   {myFunction("Fazilet")}
   {/* { isAdmin ?  <Text style={{fontSize:40}}>Admin kullanicisi</Text>:null} */}
   {isAdmin && <Text style={{fontSize:40}}>Admin kullanicisi</Text>}
+  {cities()}
      </>
    ); 
   // (<View style={{
