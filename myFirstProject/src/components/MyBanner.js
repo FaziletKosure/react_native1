@@ -9,8 +9,9 @@ const MyBanner = (props) => {
           <Text style={styles.text}>{props.menu}</Text>
           <Text>{props.desc}</Text>
         </View>
+        {!props.isActive && <Text>Aktif Degil</Text>}
 
-        <Text>Aktif Degil</Text>
+        {/* <Text>Aktif Degil</Text> */}
       </View>
     </View>
   );
