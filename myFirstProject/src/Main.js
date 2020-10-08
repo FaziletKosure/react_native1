@@ -1,87 +1,83 @@
 import React from 'react';
-import MyBanner from './components/MyBanner';
-import MyButton from './components/MyButton';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-const food_data = [
-  {
-    id: 0,
-    title: 'Çorbalar',
-    desc: 'Birbirinden leziz çorbalar!',
-    color: '#e57373',
-    isActive: false,
-  },
-  {
-    id: 1,
-    title: 'Ara Sıcaklar',
-    desc: 'Lezzetlei aparetifler',
-    color: '#81d4fa',
-    isActive: true,
-  },
-  {
-    id: 2,
-    title: 'Ana Yemekler',
-    desc: 'Doyurucu lezzetler',
-    color: '#ffd54f',
-    isActive: false,
-  },
-  {
-    id: 3,
-    title: 'Alkolsüz İçecekler',
-    desc: 'Buz gibi serinletici lezzetler',
-    color: '#cfd8dc',
-    isActive: false,
-  },
-];
+import {StyleSheet, Text, View} from 'react-native';
 
 const Main = () => {
   return (
     <View style={{flex: 1}}>
-      {food_data.map((food) => {
-        return (
-          <MyBanner
-            menu={food.title}
-            desc={food.desc}
-            color={food.color}
-            isActive={food.isActive}
-          />
-        );
-      })}
-      {/* <Text>Hello Fazilet</Text>
-     
-      <MyBanner
-        menu="Ara sicaklar"
-        desc="birbirinden leziz corbalar"
-        color="yellow"
-        isActive={true}
-      />
-      <MyBanner
-        menu="Tatlilar"
-        desc="birbirinden leziz corbalar"
-        color="pink"
-        isActive={false}
-      /> */}
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => alert('Hello')}
-        onLongPress={() => alert('Long Press')}>
-        <Text style={styles.text}>Yenile</Text>
-      </TouchableOpacity>
+      <View style={{flex: 1, backgroundColor: 'red'}}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            backgroundColor: 'grey',
+            margin: 15,
+            borderRadius: 10,
+          }}>
+          <View
+            style={{
+              backgroundColor: 'orange',
+              borderRadius: 100,
+              width: 100,
+              height: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{fontWeight: 'bold', fontSize: 16}}>
+              Orange Circle
+            </Text>
+          </View>
+          <View
+            style={{
+              backgroundColor: 'yellow',
+              borderRadius: 20,
+              width: 100,
+              height: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text>Yellow Box</Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={{
+          flex: 2,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          backgroundColor: 'pink',
+        }}>
+        <View
+          style={{
+            backgroundColor: 'black',
+            borderRadius: 20,
+            width: 200,
+            height: 370,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{color: 'white'}}>Black Box</Text>
+        </View>
+        <View
+          style={{
+            backgroundColor: 'brown',
+            borderRadius: 100,
+            width: 60,
+            height: 380,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{color: 'white', transform: [{rotate: '270deg'}]}}>
+            Brown Box
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };
 
 export default Main;
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#0277bd',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
-  },
-  text: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-  },
-});
+const styles = StyleSheet.create({});
