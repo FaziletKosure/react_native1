@@ -6,9 +6,21 @@ const Main = () => {
   return (
     <View style={{flex: 1}}>
       <Text>Hello Fazilet</Text>
-      <MyBanner menu="Corbalar" />
-      <MyBanner menu="Salatalar" />
-      <MyBanner menu="Tatlilar" />
+      <MyBanner
+        menu="Corbalar"
+        desc="birbirinden leziz corbalar"
+        color="blue"
+      />
+      <MyBanner
+        menu="Ara sicaklar"
+        desc="birbirinden leziz corbalar"
+        color="yellow"
+      />
+      <MyBanner
+        menu="Tatlilar"
+        desc="birbirinden leziz corbalar"
+        color="pink"
+      />
     </View>
   );
 };
