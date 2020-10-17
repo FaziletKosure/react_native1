@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         borderRadius:5,
         alignSelf:'flex-start',
-        padding:10,
+        padding:5,
 
     }
 })
