@@ -13,10 +13,11 @@ const ProductCard = ({ product }) => {
             <ImageBackground
                 source={{ uri: product.imgURL }}
                 style={styles.image}
-    ><Text style={styles.text}>{product.inStock ? "InStock 😎" : "Not InStock 😌"}</Text></ImageBackground>
+    ></ImageBackground>
             <View style={{ flex: 1, justifyContent: 'space-between' }}>
                 <Text>{product.title}</Text>
                 <Text style={{ fontWeight: 'bold' }}>{product.price}</Text>
+                <Text style={styles.text}>{product.inStock ? "InStock 😎" : "Not InStock 😌"}</Text>
             </View>
         </View>
     )
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
         fontSize:18,
         fontWeight:'bold',
         borderRadius:5,
-        alignSelf:'center',
+        alignSelf:'flex-start',
         padding:10,
 
     }
