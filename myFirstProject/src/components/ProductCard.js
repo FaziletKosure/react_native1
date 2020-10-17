@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions,ImageBackground } from 'react-native';
 // {
 //     "id": 1,
 //     "title": "General Mobile GM 20",
@@ -10,10 +10,10 @@ import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 const ProductCard = ({ product }) => {
     return (
         <View style={styles.container}>
-            <Image
+            <ImageBackground
                 source={{ uri: product.imgURL }}
                 style={styles.image}
-            />
+    ><Text style={styles.text}>{product.inStock ? "InStock 😎" : "Not InStock 😌"}</Text></ImageBackground>
             <View style={{ flex: 1, justifyContent: 'space-between' }}>
                 <Text>{product.title}</Text>
                 <Text style={{ fontWeight: 'bold' }}>{product.price}</Text>
@@ -34,5 +34,15 @@ const styles = StyleSheet.create({
     image: {
         height: Dimensions.get('window').height / 4,
         resizeMode: 'contain'
+    },
+    text:{
+        backgroundColor:'rgba(100,100,150,0.6)',
+        color:'white',
+        fontSize:18,
+        fontWeight:'bold',
+        borderRadius:5,
+        alignSelf:'center',
+        padding:10,
+
     }
 })

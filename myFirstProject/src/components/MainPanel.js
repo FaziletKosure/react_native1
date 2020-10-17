@@ -1,9 +1,10 @@
 // Overall - 1
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, View, Text, FlatList, StyleSheet, Alert, TextInput } from 'react-native';
-import proudctData from './product_data.json'
-import { ProductCard } from './components'
-const App = () => {
+import proudctData from '../product_data.json'
+import { ProductCard } from './ProductCard'
+import SearchBar from './SearchBar'
+const MainPanel = () => {
     const [searchValue, setSearchValue] = useState("");
     const [displayList, setDisplayList] = useState([])
     const renderListItem = ({ item }) => <ProductCard product={item} />
@@ -23,12 +24,7 @@ const App = () => {
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <Text style={styles.banner}>Clarushop</Text>
-                <View style={styles.searchBar}>
-                    <TextInput
-                        placeholder="Ürün ara..."
-                        onChangeText={(value) => setSearchValue(value)}
-                    />
-                </View>
+                <SearchBar onSearch={(value) => setSearchValue(value)} />
                 <FlatList
                     keyExtractor={(_, index) => index.toString()}
                     data={displayList}
@@ -43,7 +39,7 @@ const App = () => {
  * 1) Stok durumunu belirtmeniz
  * 2) <SearchBar onSearch={...} />
  */
-export default App;
+export default MainPanel;
 const styles = StyleSheet.create({
     banner: {
         color: 'purple',
@@ -51,10 +47,4 @@ const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center'
     },
-    searchBar: {
-        backgroundColor: "#eceff1",
-        padding: 8,
-        margin: 5,
-        borderRadius: 10
-    }
 })
